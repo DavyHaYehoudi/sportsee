@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Line = () => {
+const LineGraph = () => {
     return (
         <div className='block'>
             LINE COMPOSANT
@@ -8,4 +8,4 @@ const Line = () => {
     );
 };
 
-export default Line;
+export default LineGraph;

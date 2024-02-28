@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Radar = () => {
+const PieGraph = () => {
     return (
         <div className='block'>
-            RADAR COMPOSANT
+            PIE COMPOSANT
         </div>
     );
 };
 
-export default Radar;
+export default PieGraph;

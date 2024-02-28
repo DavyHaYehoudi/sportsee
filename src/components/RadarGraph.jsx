@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Pie = () => {
+const RadarGraph = () => {
     return (
         <div className='block'>
-            PIE COMPOSANT
+            RADAR COMPOSANT
         </div>
     );
 };
 
-export default Pie;
+export default RadarGraph;

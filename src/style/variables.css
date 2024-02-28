@@ -2,11 +2,16 @@
     /*Navigation*/
     --blackNav: #020203;
     --white: #FFFFFF;
+
     /*Background-color graphs*/
     --gray: #FBFBFB;
     --redBar: #E60000;
     --redLine: #FF0000;
     --blackRadar: #282D30;
+
+    /*COLOR Bar Graphs*/
+    --bar1:#282D30;
+    --bar2:#E60000;
 
     /*FONT SIZE*/
     --sizeTab: 1.5rem;
