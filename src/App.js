@@ -1,10 +1,14 @@
+import { Route, Routes } from "react-router-dom";
+import Profil from "./page/Profil";
+import Navigation from "./layout/Navigation";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-
-      </header>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Profil />} />
+      </Routes>
     </div>
   );
 }

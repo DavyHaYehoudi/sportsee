@@ -1,0 +1,85 @@
+.profil {
+    display: flex;
+}
+
+.profil-container {
+    flex: 1;
+    padding: 50px;
+}
+.profil h1{
+    font-size: var(--sizeH1);
+}
+.profil h2 {
+    font-weight: normal;
+    font-size: var(--sizeH2);
+}
+
+.firstName {
+    color: var(--firstName);
+}
+
+.profil-container-blocs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    grid-template-areas:
+        "daily daily daily  energy-kal"
+        "daily daily daily  energy-prot"
+        "line radial pie energy-gluc"
+        "line radial pie energy-lip"
+    ;
+    margin: 100px 0 50px 50px;
+}
+
+.block {
+    border: 1px solid black;
+}
+
+/* 1ère colonne - 1ère zone */
+.block:first-child {
+    grid-area: daily;
+    height: 320px;
+}
+/* 1ère colonne - 2ème zone */
+
+.block:nth-child(6) {
+    grid-area: line;
+}
+
+.block:nth-child(7) {
+    grid-area: radial;
+}
+
+.block:nth-child(8) {
+    grid-area: pie;
+}
+
+/* 2ème colonne */
+.block:nth-child(2) {
+    grid-area: energy-kal;
+}
+
+.block:nth-child(3) {
+    grid-area: energy-prot;
+}
+
+.block:nth-child(4) {
+    grid-area: energy-gluc;
+}
+
+.block:nth-child(5) {
+    grid-area: energy-lip;
+}
+
+.block:nth-child(6),
+.block:nth-child(7),
+.block:nth-child(8) {
+    height: 277px; 
+}
+
+.block:nth-child(2),
+.block:nth-child(3),
+.block:nth-child(4),
+.block:nth-child(5) {
+    height: 124px; 
+}

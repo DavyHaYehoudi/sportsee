@@ -1,8 +1,18 @@
 :root {
     /*Navigation*/
-    --black-nav: #020203;
+    --blackNav: #020203;
+    --white: #FFFFFF;
     /*Background-color graphs*/
     --redBar: #E60000;
     --redLine: #FF0000;
-    --blackPie: #282D30;
+    --blackRadar: #282D30;
+
+    /*FONT SIZE*/
+    --sizeTab: 1.5rem;
+    --size-copyright: 0.75rem;
+    --sizeH1:3rem;
+    --sizeH2:1.5rem;
+
+    /*COLOR TEXT*/
+    --firstName: #E60000;
 }

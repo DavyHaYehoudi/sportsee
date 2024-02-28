@@ -1,0 +1,14 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    color: var(--white);
+    background-color: var(--blackNav);
+    font-size: var(--sizeTab);
+    padding: 15px 50px 15px 30px;
+}
+
+img {
+    width: 178px;
+}
