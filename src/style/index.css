@@ -1,5 +1,16 @@
 @import "./variables.css";
 @import "./main.css";
-@import "./navigation.css";
-@import "./asideBar.css";
+
+/*LAYOUT*/
+@import "./layout/navigation.css";
+@import "./layout/asideBar.css";
+
+/*PAGE*/
 @import "./page/profil.css";
+
+/*COMPONENTS*/
+@import "./components/barGraph.css";
+@import "./components/energy.css";
+@import "./components/lineGraph.css";
+@import "./components/pieGraph.css";
+@import "./components/radarGraph.css";

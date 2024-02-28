@@ -10,18 +10,29 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
 const BarGraph = () => {
   const data = activity.data.sessions;
 
-   // Fonction pour extraire le jour de la date
-   const extractDay = (dateString) => {
+  // Fonction pour extraire le jour de la date
+  const extractDay = (dateString) => {
     return dateString.substring(8, 10);
   };
-  
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip-barGraph">
+          <p>{`${payload[0].value}kg`}</p>
+          <p>{`${payload[1].value}Kcal`}</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
   return (
     <div className="block">
       <div className="legendary">
@@ -45,22 +56,49 @@ const BarGraph = () => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey={(item) => extractDay(item.day)} />
-          <YAxis type="number" domain={["auto", "auto"]} orientation="right" />
-          <Tooltip />
-          <Legend />
+          <CartesianGrid
+            strokeDasharray="2 2"
+            horizontal={true}
+            vertical={false}
+          />
+          <XAxis
+            dataKey={(item) => extractDay(item.day)}
+            tick={{
+              stroke: "#9B9EAC",
+              fontSize: 14,
+              fontWeight: 400,
+            }}
+          />
+          <YAxis
+            type="number"
+            domain={["auto", "auto"]}
+            orientation="right"
+            tickLine={false}
+            axisLine={false}
+          />
+          <Tooltip
+            animationEasing="ease-out"
+            content={
+              <CustomTooltip
+              />
+            }
+            offset={40}
+            wrapperStyle={{ outline: "none" }}
+          />
+          {/* <Legend /> */}
           <Bar
             dataKey="kilogram"
             fill="var(--bar1)"
             activeBar={<Rectangle fill="var(--bar1)" stroke="var(--bar1)" />}
             barSize={7}
+            radius={[3.5, 3.5, 0, 0]}
           />
           <Bar
             dataKey="calories"
             fill="var(--bar2)"
             activeBar={<Rectangle fill="var(--bar2)" stroke="var(--bar2)" />}
             barSize={7}
+            radius={[3.5, 3.5, 0, 0]}
           />
         </BarChart>
       </ResponsiveContainer>

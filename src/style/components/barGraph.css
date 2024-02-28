@@ -1,0 +1,27 @@
+.legendary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 40px 20px;
+}
+
+.legendary h3 {
+    font-size: 18px;
+    font-weight: normal;
+}
+.legendary ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.legendary img {
+    width: 8px;
+}
+
+.custom-tooltip-barGraph {
+    background: var(--redBar);
+    color: var(--white);
+    padding: 5px;
+    font-size: 9px;
+}

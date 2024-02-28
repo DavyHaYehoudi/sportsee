@@ -12,6 +12,8 @@
     /*COLOR Bar Graphs*/
     --bar1:#282D30;
     --bar2:#E60000;
+    /*COLOR LINE Graphs*/
+    --text-tooltip:#282D30;
 
     /*FONT SIZE*/
     --sizeTab: 1.5rem;
