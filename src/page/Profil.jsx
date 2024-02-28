@@ -1,5 +1,14 @@
 import React from "react";
 import AsideBar from "../layout/AsideBar";
+import Bar from "../components/Bar";
+import Energy from "../components/Energy";
+import Line from "../components/Line";
+import Radar from "../components/Radar";
+import Pie from "../components/Pie";
+import kal from "../image/kal.png";
+import prot from "../image/prot.png";
+import gluc from "../image/gluc.png";
+import lip from "../image/lip.png";
 
 const Profil = () => {
   return (
@@ -11,14 +20,14 @@ const Profil = () => {
         </h1>
         <h2>Félicitations ! Vous avez explosé vos objectifs hier 👏</h2>
         <div class="profil-container-blocs">
-          <div class="block">1</div>
-          <div class="block">2</div>
-          <div class="block">3</div>
-          <div class="block">4</div>
-          <div class="block">5</div>
-          <div class="block">6</div>
-          <div class="block">7</div>
-          <div class="block">8</div>
+          <Bar />
+          <Energy icon={kal} category="calories" />
+          <Energy icon={prot} category="protéines" />
+          <Energy icon={gluc} category="glucides" />
+          <Energy icon={lip} category="lipides" />
+          <Line />
+          <Radar />
+          <Pie />
         </div>
       </div>
     </div>

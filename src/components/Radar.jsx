@@ -2,7 +2,7 @@ import React from 'react';
 
 const Radar = () => {
     return (
-        <div>
+        <div className='block'>
             RADAR COMPOSANT
         </div>
     );

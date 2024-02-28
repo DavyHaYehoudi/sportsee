@@ -2,7 +2,7 @@ import React from 'react';
 
 const Line = () => {
     return (
-        <div>
+        <div className='block'>
             LINE COMPOSANT
         </div>
     );
