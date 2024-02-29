@@ -1,5 +1,5 @@
 import React from "react";
-import sessions from "../mocks/userAverageSessions.json";
+// import sessions from "../mocks/userAverageSessions.json";
 import {
   LineChart,
   Line,
@@ -9,9 +9,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import LineGraphModel from "../models/LineGraphModel";
+import PropTypes from "prop-types";
 
-const LineGraph = ({data}) => {
-  const lineGraphModel = new LineGraphModel(sessions.data.sessions);
+const LineGraph = ({ data }) => {
+  const lineGraphModel = new LineGraphModel(data?.data.sessions);
   const formattedData = lineGraphModel.formatLineGraphData();
 
   const CustomTooltip = ({ active, payload }) => {
@@ -66,6 +67,18 @@ const LineGraph = ({data}) => {
       </ResponsiveContainer>
     </div>
   );
+};
+LineGraph.propTypes = {
+  data: PropTypes.shape({
+    data: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          day: PropTypes.number,
+          sessionLength: PropTypes.number,
+        })
+      ),
+    }),
+  }),
 };
 
 export default LineGraph;

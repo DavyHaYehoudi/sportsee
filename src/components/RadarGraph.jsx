@@ -1,5 +1,5 @@
 import React from "react";
-import performance from "../mocks/userPerformance.json";
+// import performance from "../mocks/userPerformance.json";
 import {
   Radar,
   RadarChart,
@@ -9,9 +9,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import RadarGraphModel from "../models/RadarGraphModel";
+import PropTypes from "prop-types";
 
 const RadarGraph = ({data}) => {
-  const radarGraphModel = new RadarGraphModel(performance); 
+  const radarGraphModel = new RadarGraphModel(data); 
   const formattedData = radarGraphModel.formatRadarGraphData();
 
 
@@ -49,5 +50,12 @@ const RadarGraph = ({data}) => {
     </div>
   );
 };
-
+RadarGraph.propTypes = {
+  data: PropTypes.shape({
+    data: PropTypes.shape({
+      kind: PropTypes.objectOf(PropTypes.string),
+      userId: PropTypes.number,
+    }),
+  }),
+};
 export default RadarGraph;

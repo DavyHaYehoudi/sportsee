@@ -5,7 +5,7 @@ class ActivityModel {
   
     // Méthode pour formater les données du graphique à barres
     formatBarGraphData() {
-      return this.data.sessions.map(session => ({
+      return this.data?.sessions.map(session => ({
         day: session.day,
         kilogram: session.kilogram,
         calories: session.calories,

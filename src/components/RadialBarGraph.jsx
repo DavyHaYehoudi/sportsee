@@ -2,8 +2,9 @@ import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 // import data from "../mocks/userMainData.json";
 import RadialBarGraphModel from "../models/RadialBarGraphModel";
+import PropTypes from "prop-types";
 
-const RadialBarGraph = ({data}) => {
+const RadialBarGraph = ({ data }) => {
   const radialBarGraphModel = new RadialBarGraphModel(data);
   const formattedData = radialBarGraphModel.formatRadialBarGraphData();
 
@@ -42,7 +43,23 @@ const RadialBarGraph = ({data}) => {
   );
 };
 RadialBarGraph.propTypes = {
-  // Ajoutez les PropTypes nécessaires en fonction de votre logique
+  data: PropTypes.shape({
+    data: PropTypes.shape({
+      id: PropTypes.number,
+      keyData: PropTypes.shape({
+        calorieCount: PropTypes.number,
+        proteinCount: PropTypes.number,
+        carbohydrateCount: PropTypes.number,
+        lipidCount: PropTypes.number,
+      }),
+      todayScore: PropTypes.number,
+      userInfos: PropTypes.shape({
+        age: PropTypes.number,
+        firstName: PropTypes.string,
+        lastName: PropTypes.string,
+      }),
+    }),
+  }),
 };
 
 export default RadialBarGraph;

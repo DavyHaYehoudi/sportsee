@@ -1,7 +1,7 @@
 import React from "react";
 import ovalBlack from "../image/ovalBlack.png";
 import ovalRed from "../image/ovalRed.png";
-import activity from "../mocks/userActivity.json";
+// import activity from "../mocks/userActivity.json";
 import {
   BarChart,
   Bar,
@@ -13,9 +13,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import ActivityModel from "../models/ActivityModel";
+import PropTypes from "prop-types";
+
 
 const BarGraph = ({data}) => {
-  const activityModel = new ActivityModel(activity.data);
+  console.log("data:", data);
+
+  const activityModel = new ActivityModel(data?.data);
   const formattedData = activityModel.formatBarGraphData();
 
   const CustomTooltip = ({ active, payload }) => {
@@ -98,5 +102,16 @@ const BarGraph = ({data}) => {
     </div>
   );
 };
-
+BarGraph.propTypes = {
+  data: PropTypes.shape({
+    sessions: PropTypes.arrayOf(
+      PropTypes.shape({
+        day: PropTypes.string,
+        kilogram: PropTypes.number,
+        calories: PropTypes.number
+      })
+    ),
+    userId: PropTypes.number,
+  }),
+};
 export default BarGraph;

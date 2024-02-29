@@ -13,7 +13,7 @@ class RadarGraphModel {
 
   // Méthode pour formater les données du graphique radar
   formatRadarGraphData() {
-    return this.data.data.data.map((perfKind) => ({
+    return this.data?.data?.data.map((perfKind) => ({
       ...perfKind,
       kind: this.kindTraduct[perfKind.kind],
     }));

@@ -16,10 +16,10 @@ const Energy = ({ category, icon, count, unit }) => {
   );
 };
 Energy.propTypes = {
-  category: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-  unit: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
+  category: PropTypes.string,
+  icon: PropTypes.string,
+  unit: PropTypes.string,
+  count: PropTypes.number,
 };
 
 export default Energy;
