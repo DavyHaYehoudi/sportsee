@@ -1,9 +1,9 @@
 import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
-import data from "../mocks/userMainData.json";
+// import data from "../mocks/userMainData.json";
 import RadialBarGraphModel from "../models/RadialBarGraphModel";
 
-const RadialBarGraph = () => {
+const RadialBarGraph = ({data}) => {
   const radialBarGraphModel = new RadialBarGraphModel(data);
   const formattedData = radialBarGraphModel.formatRadialBarGraphData();
 

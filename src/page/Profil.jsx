@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AsideBar from "../layout/AsideBar";
 import Energy from "../components/Energy";
 import kal from "../image/kal.png";
 import prot from "../image/prot.png";
 import gluc from "../image/gluc.png";
 import lip from "../image/lip.png";
-import user from "../mocks/userMainData.json";
+// import user from "../mocks/userMainData.json";
 import BarGraph from "../components/BarGraph";
 import LineGraph from "../components/LineGraph";
 import RadarGraph from "../components/RadarGraph";
 import RadialBarGraph from "../components/RadialBarGraph";
+import MockSource from "../sources/Mock";
 
 const Profil = () => {
-  const { firstName } = user.data.userInfos;
+  const [data, setData] = useState(null);
+  const { user, activity, sessions, performance } = data || {};
+  const userId = 12;
+  const source = {
+    mock: new MockSource(),
+  };
+  useEffect(() => {
+    if (!data) {
+      setData((prevData) => ({
+        ...prevData,
+        user: source.mock.getUserData(userId),
+        activity: source.mock.getUserActivity(userId),
+        sessions: source.mock.getUserAverageSessions(userId),
+        performance: source.mock.getUserPerformance(userId),
+      }));
+    }
+  }, [data, source.mock]);
+
+  const { firstName } = user?.data?.userInfos || {};
   const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
-    user.data.keyData;
+    user?.data?.keyData || {};
   return (
     <div className="profil">
       <AsideBar />
@@ -24,7 +43,7 @@ const Profil = () => {
         </h1>
         <h2>Félicitations ! Vous avez explosé vos objectifs hier 👏</h2>
         <div className="profil-container-blocs">
-          <BarGraph />
+          <BarGraph data={activity} />
           <Energy
             icon={kal}
             category="calories"
@@ -44,9 +63,9 @@ const Profil = () => {
             unit="g"
           />
           <Energy icon={lip} category="lipides" count={lipidCount} unit="g" />
-          <LineGraph />
-          <RadarGraph />
-          <RadialBarGraph />
+          <LineGraph data={sessions} />
+          <RadarGraph data={performance} />
+          <RadialBarGraph data={user} />
         </div>
       </div>
     </div>

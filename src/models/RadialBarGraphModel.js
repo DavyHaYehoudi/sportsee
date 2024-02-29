@@ -5,7 +5,7 @@ class RadialBarGraphModel {
 
   // Méthode pour formater les données du graphique radial
   formatRadialBarGraphData() {
-    const { todayScore, score } = this.data.data;
+    const { todayScore, score } = this.data?.data || {};
     const dataScore = todayScore ? todayScore : score;
     return [{ name: "score", value: dataScore }];
   }

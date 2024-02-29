@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import RadarGraphModel from "../models/RadarGraphModel";
 
-const RadarGraph = () => {
+const RadarGraph = ({data}) => {
   const radarGraphModel = new RadarGraphModel(performance); 
   const formattedData = radarGraphModel.formatRadarGraphData();
 

@@ -14,9 +14,9 @@ import {
 } from "recharts";
 import ActivityModel from "../models/ActivityModel";
 
-const BarGraph = () => {
+const BarGraph = ({data}) => {
   const activityModel = new ActivityModel(activity.data);
-  const data = activityModel.formatBarGraphData();
+  const formattedData = activityModel.formatBarGraphData();
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -45,7 +45,7 @@ const BarGraph = () => {
       </div>
       <ResponsiveContainer width="100%" height="60%">
         <BarChart
-          data={data}
+          data={formattedData}
           margin={{
             top: 5,
             right: 30,

@@ -10,10 +10,10 @@ import {
 } from "recharts";
 import LineGraphModel from "../models/LineGraphModel";
 
-const LineGraph = () => {
+const LineGraph = ({data}) => {
   const lineGraphModel = new LineGraphModel(sessions.data.sessions);
-  const data = lineGraphModel.formatLineGraphData();
-  
+  const formattedData = lineGraphModel.formatLineGraphData();
+
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -29,7 +29,7 @@ const LineGraph = () => {
       <h3 className="session-title">Durée moyenne des sessions</h3>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
-          data={data}
+          data={formattedData}
           margin={{
             top: 10,
             right: 0,
