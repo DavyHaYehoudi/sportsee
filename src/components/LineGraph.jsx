@@ -11,10 +11,10 @@ import {
 
 const LineGraph = () => {
   const data = sessions.data.sessions;
-  
+
   //Conversion numero de jour en jour de semaine
   const initialDay = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
-  const convertData = data.map((session, index) => ({
+  const formattedData = data.map((session, index) => ({
     day: initialDay[index],
     sessionLength: session.sessionLength,
   }))
@@ -34,7 +34,7 @@ const LineGraph = () => {
       <h3 className="session-title">Durée moyenne des sessions</h3>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
-          data={convertData}
+          data={formattedData}
           margin={{
             top: 10,
             right: 0,

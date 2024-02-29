@@ -23,7 +23,7 @@ const Profil = () => {
           Bonjour <span className="firstName">{firstName} </span>
         </h1>
         <h2>Félicitations ! Vous avez explosé vos objectifs hier 👏</h2>
-        <div class="profil-container-blocs">
+        <div className="profil-container-blocs">
           <BarGraph />
           <Energy
             icon={kal}
