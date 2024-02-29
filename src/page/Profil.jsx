@@ -9,7 +9,7 @@ import user from "../mocks/userMainData.json";
 import BarGraph from "../components/BarGraph";
 import LineGraph from "../components/LineGraph";
 import RadarGraph from "../components/RadarGraph";
-import PieGraph from "../components/PieGraph";
+import RadialBarGraph from "../components/RadialBarGraph";
 
 const Profil = () => {
   const { firstName } = user.data.userInfos;
@@ -46,7 +46,7 @@ const Profil = () => {
           <Energy icon={lip} category="lipides" count={lipidCount} unit="g" />
           <LineGraph />
           <RadarGraph />
-          <PieGraph />
+          <RadialBarGraph />
         </div>
       </div>
     </div>

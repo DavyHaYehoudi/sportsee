@@ -10,29 +10,35 @@ import {
 } from "recharts";
 
 const RadarGraph = () => {
-  const kindList = Object.entries(performance.data.kind);
-  const formattedData = performance.data.data.map(({ kind, value }) => {
-    let perfKind;
-    for (let s of kindList) {
-      if (parseInt(s[0]) === kind) {
-        perfKind = s[1];
-      }
-    }
-    return { kind: perfKind, value };
-  });
+  const kindTraduct = {
+    1: "Cardio",
+    2: "Energie",
+    3: "Endurance",
+    4: "Force",
+    5: "Vitesse",
+    6: "Intensité",
+  };
+
+  const formattedData = performance.data.data.map((perfKind) => ({
+    ...perfKind,
+    kind: kindTraduct[perfKind.kind],
+  }));
 
   return (
     <div className="block">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%"
-         outerRadius="80%" 
-         data={formattedData}
+        <RadarChart
+          cx="50%"
+          cy="50%"
+          outerRadius="80%"
+          data={formattedData}
           startAngle={30}
           endAngle={-330}
           margin={{
             right: 15,
             left: 20,
-          }}>
+          }}
+        >
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
