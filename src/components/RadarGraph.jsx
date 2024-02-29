@@ -8,21 +8,12 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import RadarGraphModel from "../models/RadarGraphModel";
 
 const RadarGraph = () => {
-  const kindTraduct = {
-    1: "Cardio",
-    2: "Energie",
-    3: "Endurance",
-    4: "Force",
-    5: "Vitesse",
-    6: "Intensité",
-  };
+  const radarGraphModel = new RadarGraphModel(performance); 
+  const formattedData = radarGraphModel.formatRadarGraphData();
 
-  const formattedData = performance.data.data.map((perfKind) => ({
-    ...perfKind,
-    kind: kindTraduct[perfKind.kind],
-  }));
 
   return (
     <div className="block">

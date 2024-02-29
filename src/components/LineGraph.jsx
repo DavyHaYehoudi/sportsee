@@ -8,17 +8,12 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import LineGraphModel from "../models/LineGraphModel";
 
 const LineGraph = () => {
-  const data = sessions.data.sessions;
-
-  //Conversion numero de jour en jour de semaine
-  const initialDay = ["L", "M", "M", "J", "V", "S", "D"];
-  const formattedData = data.map((session, index) => ({
-    day: initialDay[index],
-    sessionLength: session.sessionLength,
-  }));
-
+  const lineGraphModel = new LineGraphModel(sessions.data.sessions);
+  const data = lineGraphModel.formatLineGraphData();
+  
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -34,7 +29,7 @@ const LineGraph = () => {
       <h3 className="session-title">Durée moyenne des sessions</h3>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
-          data={formattedData}
+          data={data}
           margin={{
             top: 10,
             right: 0,

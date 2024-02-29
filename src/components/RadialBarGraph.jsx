@@ -1,11 +1,12 @@
 import React from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 import data from "../mocks/userMainData.json";
+import RadialBarGraphModel from "../models/RadialBarGraphModel";
 
 const RadialBarGraph = () => {
-  const { todayScore, score } = data.data;
-  const dataScore = todayScore ? todayScore : score;
-  const formattedData = [{ name: "score", value: dataScore }];
+  const radialBarGraphModel = new RadialBarGraphModel(data);
+  const formattedData = radialBarGraphModel.formatRadialBarGraphData();
+
   return (
     <div className="block">
       <h3 className="score-title">Score</h3>
@@ -31,7 +32,9 @@ const RadialBarGraph = () => {
         </RadialBarChart>
       </ResponsiveContainer>
       <div className="score-details-wrapper">
-        <span className="score-details-number">{dataScore * 100}%</span>
+        <span className="score-details-number">
+          {formattedData[0].value * 100}%
+        </span>
         <span className="score-details-text">de votre</span>
         <span className="score-details-text">objectif</span>
       </div>
@@ -39,7 +42,7 @@ const RadialBarGraph = () => {
   );
 };
 RadialBarGraph.propTypes = {
-    // Ajoutez les PropTypes nécessaires en fonction de votre logique
-  };
-  
+  // Ajoutez les PropTypes nécessaires en fonction de votre logique
+};
+
 export default RadialBarGraph;

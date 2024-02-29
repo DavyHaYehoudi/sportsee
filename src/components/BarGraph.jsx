@@ -12,14 +12,11 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import ActivityModel from "../models/ActivityModel";
 
 const BarGraph = () => {
-  const data = activity.data.sessions;
-
-  // Fonction pour extraire le jour de la date
-  const extractDay = (dateString) => {
-    return dateString.substring(8, 10);
-  };
+  const activityModel = new ActivityModel(activity.data);
+  const data = activityModel.formatBarGraphData();
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -62,7 +59,7 @@ const BarGraph = () => {
             vertical={false}
           />
           <XAxis
-            dataKey={(item) => extractDay(item.day)}
+            dataKey={(item) => activityModel.extractDay(item.day)}
             tick={{
               stroke: "#9B9EAC",
               fontSize: 14,
