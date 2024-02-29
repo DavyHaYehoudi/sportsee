@@ -27,14 +27,13 @@
     grid-template-areas:
         "daily daily daily  energy-kal"
         "daily daily daily  energy-prot"
-        "line radial pie energy-gluc"
-        "line radial pie energy-lip"
+        "line radial radialBar energy-gluc"
+        "line radial radialBar energy-lip"
     ;
     margin: 100px 0 50px 50px;
 }
 
 .block {
-    border: 1px solid black;
     border-radius: var(--radius);
 }
 
@@ -57,8 +56,9 @@
     background: var(--blackRadar);
 }
 
-.block:nth-child(8) { /* Score pie graph */
-    grid-area: pie;
+.block:nth-child(8) { /* Score radialbar graph */
+    position: relative;
+    grid-area: radialBar;
     background: var(--gray);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0212);
 }

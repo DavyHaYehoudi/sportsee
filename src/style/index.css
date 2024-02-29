@@ -9,8 +9,6 @@
 @import "./page/profil.css";
 
 /*COMPONENTS*/
-@import "./components/barGraph.css";
+@import "./components/graphs.css";
 @import "./components/energy.css";
-@import "./components/lineGraph.css";
-@import "./components/pieGraph.css";
-@import "./components/radarGraph.css";
+

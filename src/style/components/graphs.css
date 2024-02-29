@@ -1,0 +1,74 @@
+/* ACTIVITES QUOTIDIENNES BAR GRAPH */
+.legendary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 40px 20px;
+}
+
+.legendary h3 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.legendary ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.legendary img {
+    width: 8px;
+}
+
+.custom-tooltip-barGraph {
+    background: var(--redBar);
+    color: var(--white);
+    padding: 5px;
+    font-size: 9px;
+}
+
+/* SESSIONS LINE GRAPH */
+.customTooltip-lineGraph {
+    background-color: var(--white);
+    color: var(--text-tooltip);
+    padding: 2px 6px;
+    font-size: 9px;
+}
+
+.session-title {
+    font-size: 15px;
+    font-weight: normal;
+    opacity: 50%;
+    width: 148px;
+    margin: 20px auto;
+}
+
+/* SCORE RADIALBAR GRAPH */
+.block:nth-child(8) h3 {
+    position: absolute;
+    left: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.score-details-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.score-details-number {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.score-details-text {
+    color: var(--grayRadialBar);
+    font-size: 16px;
+}

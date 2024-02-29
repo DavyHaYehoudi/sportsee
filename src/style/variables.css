@@ -8,13 +8,15 @@
     --redBar: #E60000;
     --redLine: #FF0000;
     --blackRadar: #282D30;
-    --redRadar:#FF0101;
+    --redRadar: #FF0101;
+    --redRadialBar: #FF0000;
+    --grayRadialBar: #74798C;
 
     /*COLOR Bar Graphs*/
-    --bar1:#282D30;
-    --bar2:#E60000;
+    --bar1: #282D30;
+    --bar2: #E60000;
     /*COLOR LINE Graphs*/
-    --text-tooltip:#282D30;
+    --text-tooltip: #282D30;
 
     /*FONT SIZE*/
     --sizeTab: 1.5rem;
