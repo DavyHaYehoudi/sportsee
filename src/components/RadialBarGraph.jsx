@@ -38,5 +38,8 @@ const RadialBarGraph = () => {
     </div>
   );
 };
-
+RadialBarGraph.propTypes = {
+    // Ajoutez les PropTypes nécessaires en fonction de votre logique
+  };
+  
 export default RadialBarGraph;

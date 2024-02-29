@@ -13,11 +13,11 @@ const LineGraph = () => {
   const data = sessions.data.sessions;
 
   //Conversion numero de jour en jour de semaine
-  const initialDay = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
+  const initialDay = ["L", "M", "M", "J", "V", "S", "D"];
   const formattedData = data.map((session, index) => ({
     day: initialDay[index],
     sessionLength: session.sessionLength,
-  }))
+  }));
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -50,7 +50,6 @@ const LineGraph = () => {
             tick={{ fill: "var(--white)", opacity: "0.5", fontSize: "14px" }}
             interval={"preserveStartEnd"}
             padding={{ left: 20, right: 20 }}
-            
           />
           <YAxis type="number" hide="true" />
           <Tooltip

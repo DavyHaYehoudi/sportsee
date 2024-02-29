@@ -78,14 +78,10 @@ const BarGraph = () => {
           />
           <Tooltip
             animationEasing="ease-out"
-            content={
-              <CustomTooltip
-              />
-            }
+            content={<CustomTooltip />}
             offset={40}
             wrapperStyle={{ outline: "none" }}
           />
-          {/* <Legend /> */}
           <Bar
             dataKey="kilogram"
             fill="var(--bar1)"

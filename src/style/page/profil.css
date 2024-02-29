@@ -99,3 +99,24 @@
     height: 124px;
     background: var(--gray);
 }
+
+@media (max-width: 1350px) {
+    .profil-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .profil-container-blocs {
+        margin: 0;
+        grid-template-areas:
+            "energy-kal energy-prot energy-gluc energy-lip"
+            "daily daily daily daily"
+            "line radial radial radialBar "
+            ;
+            grid-template-columns: repeat(4, 1fr);
+    }
+    .block-energy{
+        gap: 10px !important;
+        height: 100px !important;
+        
+    }
+}
