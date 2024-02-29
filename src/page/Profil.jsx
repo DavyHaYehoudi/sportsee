@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import AsideBar from "../layout/AsideBar";
 import Energy from "../components/Energy";
 import kal from "../image/kal.png";
@@ -10,30 +10,17 @@ import BarGraph from "../components/BarGraph";
 import LineGraph from "../components/LineGraph";
 import RadarGraph from "../components/RadarGraph";
 import RadialBarGraph from "../components/RadialBarGraph";
-import MockSource from "../sources/Mock";
+import { useParams } from "react-router-dom";
+import useUserData from "../service/hook/useUserData";
 
 const Profil = () => {
-  const [data, setData] = useState(null);
+  const { userId } = useParams();
+  const data = useUserData(userId);
   const { user, activity, sessions, performance } = data || {};
-  const userId = 12;
-  const source = {
-    mock: new MockSource(),
-  };
-  useEffect(() => {
-    if (!data) {
-      setData((prevData) => ({
-        ...prevData,
-        user: source.mock.getUserData(userId),
-        activity: source.mock.getUserActivity(userId),
-        sessions: source.mock.getUserAverageSessions(userId),
-        performance: source.mock.getUserPerformance(userId),
-      }));
-    }
-  }, [data, source.mock]);
-
   const { firstName } = user?.data?.userInfos || {};
   const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
     user?.data?.keyData || {};
+    
   return (
     <div className="profil">
       <AsideBar />

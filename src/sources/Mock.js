@@ -4,16 +4,16 @@ import user from "../mocks/userMainData.json";
 import performance from "../mocks/userPerformance.json";
 
 export default class MockSource {
-   getUserData() {
+   getUser() {
     return user;
   }
-   getUserActivity() {
+   getActivity() {
     return activity;
   }
-   getUserAverageSessions() {
+   getSessions() {
     return sessions;
   }
-   getUserPerformance() {
+   getPerformance() {
     return performance;
   }
 }

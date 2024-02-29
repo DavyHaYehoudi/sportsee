@@ -17,8 +17,6 @@ import PropTypes from "prop-types";
 
 
 const BarGraph = ({data}) => {
-  console.log("data:", data);
-
   const activityModel = new ActivityModel(data?.data);
   const formattedData = activityModel.formatBarGraphData();
 

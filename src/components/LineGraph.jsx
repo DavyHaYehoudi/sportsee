@@ -12,7 +12,7 @@ import LineGraphModel from "../models/LineGraphModel";
 import PropTypes from "prop-types";
 
 const LineGraph = ({ data }) => {
-  const lineGraphModel = new LineGraphModel(data?.data.sessions);
+  const lineGraphModel = new LineGraphModel(data?.data?.sessions);
   const formattedData = lineGraphModel.formatLineGraphData();
 
   const CustomTooltip = ({ active, payload }) => {
