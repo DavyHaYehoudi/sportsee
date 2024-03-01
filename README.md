@@ -5,18 +5,22 @@ Ce projet a été créé à l'aide de Create React App. [Create React App](https
 
 ## Scripts Disponibles
 
-Dans le répertoire du projet, vous pouvez exécuter :
-
-### `npm start`
+#### 1. FRONT
+##### `npm start` 
 
 Lance l'application en mode développement.\
 Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour le visualiser.
+
+#### 2. API
+##### `npm start` 
+Ecoute sur le port 5500 
+
 ## Introduction
 
 Ce projet utilise deux sources de données pour alimenter ses fonctionnalités : les données simulées (mocks) et les données provenant d'une API.
-## Sources de Données
+### Sources de Données
 
-### 1. Mocks
+#### 1. Mocks
 Les données simulées sont installées directement dans l'application côté front-end. Elles sont utilisées principalement pour le développement et la démo. Les fichiers correspondants se trouvent dans le dossier `mocks`.
 
 - **userMainData.json:** Contient les informations principales de l'utilisateur.
@@ -26,7 +30,7 @@ Les données simulées sont installées directement dans l'application côté fr
 
 La source de données Mock est implémentée dans le fichier `MockSource.js`.
 
-### 2. API
+#### 2. API
 
 Les données provenant d'une API sont atteignables par les endpoints suivants :
 
@@ -38,9 +42,9 @@ Les données provenant d'une API sont atteignables par les endpoints suivants :
 La source de données API est implémentée dans le fichier `ApiSource.js`. L'URL de base de l'API est configurable via la variable d'environnement `REACT_APP_BASE_URL` dans le fichier `.env`.
 
 
-## Points d'Accès en détails (Endpoints)
+### Points d'Accès en détails (Endpoints)
 
-### 1.  Points d'Accès Possibles
+#### 1.  Points d'Accès Possibles
 
 Ce projet propose quatre points d'accès que vous pouvez utiliser :
 
@@ -62,7 +66,7 @@ Ce projet propose quatre points d'accès que vous pouvez utiliser :
 
 **Attention:** Actuellement, seuls deux utilisateurs ont été simulés avec les identifiants d'utilisateur 12 et 18, respectivement.
 
-### 2. Exemples de Requêtes
+#### 2. Exemples de Requêtes
 
 1. Récupérer la performance de l'utilisateur avec l'identifiant 12 :
    - Exemple de Requête :  `http://localhost:5500/user/12/performance`
