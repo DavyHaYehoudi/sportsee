@@ -108,11 +108,20 @@
     .profil-container-blocs {
         margin: 0;
         grid-template-areas:
+            "daily daily "
+            "line radial "
+            "radialBar radialBar"
+            "energy-kal energy-prot  "
+            "energy-gluc energy-lip"
+            ;
+            grid-template-columns: repeat(2, 1fr);
+        /* grid-template-areas:
             "energy-kal energy-prot energy-gluc energy-lip"
             "daily daily daily daily"
             "line radial radial radialBar "
+            "line radial radial radialBar "
             ;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr); */
     }
     .block-energy{
         gap: 10px !important;
