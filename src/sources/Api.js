@@ -1,32 +1,39 @@
-const baseUrl = process.env.REACT_APP_BASE_URL || "http://localhost:5500";
+import { customFetch } from "../service/customFetch";
 
 export default class ApiSource {
   async getUser(userId) {
-    const user = await fetch(`${baseUrl}/user/${userId}`).then((res) =>
-      res.json()
-    );
-
-    return user;
+    try {
+      const user = await customFetch(`user/${userId}`);
+      return user;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async getActivity(userId) {
-    const activity = await fetch(`${baseUrl}/user/${userId}/activity`).then(
-      (res) => res.json()
-    );
-    return activity;
+    try {
+      const activity = await customFetch(`user/${userId}/activity`);
+      return activity;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async getSessions(userId) {
-    const sessions = await fetch(
-      `${baseUrl}/user/${userId}/average-sessions`
-    ).then((res) => res.json());
-    return sessions;
+    try {
+      const sessions = await customFetch(`user/${userId}/average-sessions`);
+      return sessions;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async getPerformance(userId) {
-    const performance = await fetch(
-      `${baseUrl}/user/${userId}/performance`
-    ).then((res) => res.json());
-    return performance;
+    try {
+      const performance = await customFetch(`user/${userId}/performance`);
+      return performance;
+    } catch (error) {
+      throw error;
+    }
   }
 }

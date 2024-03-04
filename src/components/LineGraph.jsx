@@ -60,6 +60,9 @@ const LineGraph = ({ data }) => {
             dot={false}
             activeDot={{
               fill: "#FFFFFF",
+              r: 4,
+              strokeWidth: 8,
+              strokeOpacity: 0.4,
             }}
             strokeWidth={2}
           />

@@ -2,11 +2,11 @@ class RadarGraphModel {
   constructor(data) {
     this.data = data;
     this.kindTraduct = {
-      1: "Cardio",
-      2: "Energie",
+      1: "Vitesse",
+      2: "Force",
       3: "Endurance",
-      4: "Force",
-      5: "Vitesse",
+      4: "Energie",
+      5: "Cardio",
       6: "Intensité",
     };
   }
