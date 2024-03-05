@@ -87,9 +87,14 @@
 }
 
 .block:nth-child(6) { /* Sessions */
+    position: relative;
     background-color: var(--redLine);
     color: var(--white);
     font-weight: 500;
+}
+.block:nth-child(6) h3{
+    position: absolute;
+    left: 20px;
 }
 
 .block:nth-child(2), /* Energy */

@@ -7,6 +7,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  Rectangle
 } from "recharts";
 import LineGraphModel from "../models/LineGraphModel";
 import PropTypes from "prop-types";
@@ -18,13 +19,22 @@ const LineGraph = ({ data }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="customTooltip-lineGraph">
-          <p>{`${payload[0].value} min`}</p>
-        </div>
+          <div className="customTooltip-lineGraph">
+            <p>{`${payload[0].value} min`}</p>
+          </div>
       );
     }
     return null;
   };
+  const CustomCursor = ({ points, width }) => {
+    console.log('points:', points)
+    const { x } = points[0]
+    return (
+      <Rectangle fill="hsla(0, 0%, 0%, 9.75%)" x={x}  width={width} height={300} />
+    )
+  }
+
+  
   return (
     <div className="block">
       <h3 className="session-title">Durée moyenne des sessions</h3>
@@ -32,10 +42,10 @@ const LineGraph = ({ data }) => {
         <LineChart
           data={formattedData}
           margin={{
-            top: 10,
+            top: 50,
             right: 0,
             left: 0,
-            bottom: 110,
+            bottom: 30,
           }}
         >
           <XAxis
@@ -52,6 +62,7 @@ const LineGraph = ({ data }) => {
             wrapperStyle={{ outline: "none" }}
             content={<CustomTooltip />}
             animationEasing="ease-out"
+            cursor={<CustomCursor /> }
           />
           <Line
             type="natural"
