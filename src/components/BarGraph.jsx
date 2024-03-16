@@ -69,9 +69,10 @@ const BarGraph = ({data}) => {
             }}
           />
           <YAxis
-            type="number"
-            domain={["auto", "auto"]}
+            dataKey={(item)=>item.kilogram}
+            domain={['dataMin-2', 'dataMax+1']}
             orientation="right"
+            tick={{ fill: '#9B9EAC' }}
             tickLine={false}
             axisLine={false}
           />
@@ -79,7 +80,6 @@ const BarGraph = ({data}) => {
             animationEasing="ease-out"
             content={<CustomTooltip />}
             offset={40}
-            wrapperStyle={{ outline: "none" }}
           />
           <Bar
             dataKey="kilogram"
@@ -91,7 +91,10 @@ const BarGraph = ({data}) => {
           <Bar
             dataKey="calories"
             fill="var(--bar2)"
-            activeBar={<Rectangle fill="var(--bar2)" stroke="var(--bar2)" />}
+            activeBar={<Rectangle
+              //  fill="var(--bar2)" 
+              //  stroke="var(--bar2)"
+                />}
             barSize={7}
             radius={[3.5, 3.5, 0, 0]}
           />
