@@ -10,17 +10,19 @@ const Home = () => {
       <AsideBar />
       <div className="homePage-container">
         <h1>Votre compte utilisateur :</h1>
-        <div className="card-profil">
-          <Link to="/profil/12">
-            <img src={karlImage} alt="Karl" />
-            <p>Karl</p>
-          </Link>
-        </div>
-        <div className="card-profil">
-          <Link to="/profil/18">
-            <img src={ceciliaImage} alt="Cecilia" />
-            <p>Cécilia</p>
-          </Link>
+        <div className="card-profil-wrapper">
+          <div className="card-profil">
+            <Link to="/profil/12">
+              <img src={karlImage} alt="Karl" />
+              <p>Karl</p>
+            </Link>
+          </div>
+          <div className="card-profil">
+            <Link to="/profil/18">
+              <img src={ceciliaImage} alt="Cecilia" />
+              <p>Cecilia</p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
