@@ -9,7 +9,7 @@ const Navigation = () => {
         <img src={logo} alt="logo" />{" "}
       </Link>
       <Link to="/">Accueil</Link>
-      <Link to="/">Profil</Link>
+      <Link to="/profil">Profil</Link>
       <Link to="/">Réglage</Link>
       <Link to="/">Communauté</Link>
     </nav>

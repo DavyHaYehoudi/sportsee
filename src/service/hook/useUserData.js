@@ -9,8 +9,8 @@ const useUserData = (userId) => {
   useEffect(() => {
     const fetchData = async () => {
       const sourceSelect = [new MockSource(), new ApiSource()];
-      const indexSelect = 0;           //source mock
-      // const indexSelect = 1; //source api
+      // const indexSelect = 0;           //source mock
+      const indexSelect = 1;  //source api
 
       try {
         const userData = await sourceSelect[indexSelect].getUser(userId);

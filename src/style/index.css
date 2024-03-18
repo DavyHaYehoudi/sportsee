@@ -7,7 +7,7 @@
 
 /*PAGE*/
 @import "./page/profil.css";
-
+@import "./page//home.css";
 /*COMPONENTS*/
 @import "./components/graphs.css";
 @import "./components/energy.css";

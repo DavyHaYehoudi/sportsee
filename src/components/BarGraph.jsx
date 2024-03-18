@@ -25,7 +25,7 @@ const BarGraph = ({data}) => {
       return (
         <div className="custom-tooltip-barGraph">
           <p>{`${payload[0].value}kg`}</p>
-          <p>{`${payload[1].value}Kcal`}</p>
+          <p>{`${payload[1].value*7}Kcal`}</p>
         </div>
       );
     }
@@ -70,7 +70,8 @@ const BarGraph = ({data}) => {
           />
           <YAxis
             dataKey={(item)=>item.kilogram}
-            domain={['dataMin-2', 'dataMax+1']}
+            // domain={['dataMin-1', 'dataMax+2']}
+            // domain={[69, 'auto']}
             orientation="right"
             tick={{ fill: '#9B9EAC' }}
             tickLine={false}
@@ -82,18 +83,16 @@ const BarGraph = ({data}) => {
             offset={40}
           />
           <Bar
-            dataKey="kilogram"
+            dataKey={item=>item.kilogram}
             fill="var(--bar1)"
             activeBar={<Rectangle fill="var(--bar1)" stroke="var(--bar1)" />}
             barSize={7}
             radius={[3.5, 3.5, 0, 0]}
           />
           <Bar
-            dataKey="calories"
+            dataKey={item=>item.calories/7}
             fill="var(--bar2)"
             activeBar={<Rectangle
-              //  fill="var(--bar2)" 
-              //  stroke="var(--bar2)"
                 />}
             barSize={7}
             radius={[3.5, 3.5, 0, 0]}
